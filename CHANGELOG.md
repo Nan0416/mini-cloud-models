@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Nan0416/mini-cloud-models/compare/v1.0.0...v1.0.1) (2025-10-29)
+
+
+### Bug Fixes
+
+* **typo:** correct package name prefix ([#2](https://github.com/Nan0416/mini-cloud-models/issues/2)) ([6b8fd5e](https://github.com/Nan0416/mini-cloud-models/commit/6b8fd5eeafa9e373823d691ba86aca4237124e9a))
+
 # 1.0.0 (2025-10-29)
 
 
