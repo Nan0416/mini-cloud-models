@@ -1,5 +1,5 @@
 {
-  "name": "@sparrow/{package}",
+  "name": "@ultrsa/mini-cloud-models",
   "version": "0.0.0",
   "description": "",
   "main": "dist/lib/index.js",
@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sparrow2024/{package}.git"
+    "url": "git+https://github.com/Nan0416/mini-cloud-models.git"
   },
   "bugs": {
-    "url": "https://github.com/sparrow2024/{package}/issues"
+    "url": "https://github.com/Nan0416/mini-cloud-models/issues"
   },
-  "homepage": "https://github.com/sparrow2024/{package}.git#readme",
+  "homepage": "https://github.com/Nan0416/mini-cloud-models.git#readme",
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
@@ -36,5 +36,8 @@
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "@ultrasa/dev-kit": "^1.0.0"
   }
 }
