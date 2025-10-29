@@ -1,12 +1,9 @@
 # Public Typescript Library Template
 
-1. Update package.json name, repository and issue url.
-2. Update README.md release github workflow badge url.
-3. Update jest.config.js suiteName to package name.
 
-![release workflow](https://github.com/sparrow2024/{[package]}/actions/workflows/release.yml/badge.svg)
+![release workflow](https://github.com/Nan0416/mini-cloud-models/actions/workflows/release.yml/badge.svg)
 
-![Latest PR workflow](https://github.com/sparrow2024/{[package]}/actions/workflows/pr.yml/badge.svg)
+![Latest PR workflow](https://github.com/Nan0416/mini-cloud-models/actions/workflows/pr.yml/badge.svg)
 
 [![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
