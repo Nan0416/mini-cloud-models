@@ -1,6 +1,11 @@
 import { EnvironmentVariables, HealthCheck } from '..';
 
-export interface LaunchTaskInstanceRequest {
+/**
+ * Internal* requests and responses are for the communication between task service and task agent.
+ *
+ * Public can't directly send requests to the task agent.
+ */
+export interface InternalLaunchTaskInstanceRequest {
   readonly taskId: string;
   readonly version: number;
   readonly taskInstanceId: string;
@@ -13,22 +18,22 @@ export interface LaunchTaskInstanceRequest {
   readonly healthCheck?: HealthCheck;
 }
 
-export interface LaunchTaskInstanceResponse {}
+export interface InternalLaunchTaskInstanceResponse {}
 
-export interface TerminateTaskInstanceRequest {
+export interface InternalTerminateTaskInstanceRequest {
   readonly taskInstanceId: string;
   readonly pid: number;
 }
 
-export interface TerminateTaskInstanceResponse {}
+export interface InternalTerminateTaskInstanceResponse {}
 
-export interface TerminateAgentRequest {}
+export interface InternalTerminateAgentRequest {}
 
-export interface TerminateAgentResponse {}
+export interface InternalTerminateAgentResponse {}
 
-export interface GetAgentStatusRequest {}
+export interface InternalGetAgentStatusRequest {}
 
-export interface GetAgentStatusResponse {}
+export interface InternalGetAgentStatusResponse {}
 
 /**
  * The interface is used by task service to issue instructions to task agents.
@@ -36,16 +41,16 @@ export interface GetAgentStatusResponse {}
  * For now, the implementation is based on pub-sub. The task service will broadcast the request to a topic.
  */
 export interface TaskAgentClient {
-  launchTaskInstance(request: LaunchTaskInstanceRequest): Promise<LaunchTaskInstanceResponse>;
+  launchTaskInstance(request: InternalLaunchTaskInstanceRequest): Promise<InternalLaunchTaskInstanceResponse>;
 
-  terminateTaskInstance(request: TerminateTaskInstanceRequest): Promise<TerminateTaskInstanceResponse>;
+  terminateTaskInstance(request: InternalTerminateTaskInstanceRequest): Promise<InternalTerminateTaskInstanceResponse>;
 
-  terminateAgent(request: TerminateAgentRequest): Promise<TerminateAgentResponse>;
+  terminateAgent(request: InternalTerminateAgentRequest): Promise<InternalTerminateAgentResponse>;
 
   /**
    * @param agentId if undefined, then request all
    */
-  getAgentStatus(request: GetAgentStatusRequest): Promise<GetAgentStatusResponse>;
+  getAgentStatus(request: InternalGetAgentStatusRequest): Promise<InternalGetAgentStatusResponse>;
 }
 
 /**
@@ -54,25 +59,25 @@ export interface TaskAgentClient {
 export interface LaunchTaskInstanceEvent {
   readonly type: 'launch-task-instance';
   readonly agentId: string;
-  readonly request: LaunchTaskInstanceRequest;
+  readonly request: InternalLaunchTaskInstanceRequest;
 }
 
 export interface TerminateTaskInstanceEvent {
   readonly type: 'terminate-task-instance';
   readonly agentId: string;
-  readonly request: TerminateTaskInstanceRequest;
+  readonly request: InternalTerminateTaskInstanceRequest;
 }
 
 export interface TerminateAgentEvent {
   readonly type: 'terminate-agent';
   readonly agentId: string;
-  readonly request: TerminateAgentRequest;
+  readonly request: InternalTerminateAgentRequest;
 }
 
 export interface GetAgentStatusEvent {
   readonly type: 'get-agent-status';
   readonly agentId?: string;
-  readonly request: GetAgentStatusRequest;
+  readonly request: InternalGetAgentStatusRequest;
 }
 
 export type TaskAgentRequestEvent = LaunchTaskInstanceEvent | TerminateTaskInstanceEvent | TerminateAgentEvent | GetAgentStatusEvent;
