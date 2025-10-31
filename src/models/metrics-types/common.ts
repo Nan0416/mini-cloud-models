@@ -1,14 +1,20 @@
-export type MetricValueUnit = 'ms' | 'count' | 'dollar' | 'percent' | 'unitless';
+export type MetricValueUnit = 'ms' | 'count' | 'percent' | 'unitless';
+
+export const METRIC_VALUE_UNITS: ReadonlyArray<MetricValueUnit> = ['ms', 'count', 'percent', 'unitless'];
 
 export type MetricStat = 'max' | 'min' | 'avg' | 'p99' | 'p95' | 'p90' | 'p75' | 'p50' | 'p25' | 'p10' | 'count' | 'sum';
 
+export const METRIC_STATS: ReadonlyArray<MetricStat> = ['max', 'min', 'avg', 'p99', 'p95', 'p90', 'p75', 'p50', 'p25', 'p10', 'count', 'sum'];
+
 export type MetricReferenceTtl = '2weeks' | '3months' | '6months';
+
+export const METRIC_REFERENCE_TTLS: ReadonlyArray<MetricReferenceTtl> = ['2weeks', '3months', '6months'];
 
 /**
  * dimesions used to report and query
  */
 export interface Dimensions {
-  [key: string]: string;
+  readonly [key: string]: string;
 }
 
 /**
@@ -33,13 +39,9 @@ export interface TimeValue {
  */
 export interface MetricItem {
   readonly namespace: string;
-  // object vs. array: object doesn't allow a key to have multiple values.
-  // todo:
-  // as for now, we keep the Dimensions type for backward compatibiltiy because some clients still log the Object dimensions.
-  // and the aggregator needs to understand them.
-  readonly dimensions?: ReadonlyArray<Dimension> | Dimensions;
+  readonly dimensions: ReadonlyArray<Dimension>;
   readonly name: string;
   readonly value: number;
   readonly unit: MetricValueUnit;
-  readonly timestamp: number;
+  readonly timestamp: string;
 }
