@@ -38,6 +38,6 @@
     "typescript": "^5.4.2"
   },
   "dependencies": {
-    "@ultrasa/dev-kit": "^1.0.0"
+    "@ultrasa/dev-kit": "^1.3.0"
   }
 }
