@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Nan0416/mini-cloud-models/compare/v1.1.0...v1.2.0) (2025-10-31)
+
+
+### Features
+
+* **metrics:** remove unused metrics logger; change  timestamp from number to string ([#4](https://github.com/Nan0416/mini-cloud-models/issues/4)) ([6a13fa7](https://github.com/Nan0416/mini-cloud-models/commit/6a13fa7e9c7d3baf0f6994475f5650432c064349))
+
 # [1.1.0](https://github.com/Nan0416/mini-cloud-models/compare/v1.0.1...v1.1.0) (2025-10-30)
 
 
