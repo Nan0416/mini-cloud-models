@@ -13,3 +13,5 @@ export * from './metrics-aggregator-request-response';
 export * from './task-client-for-agent';
 export * from './task-agent-client';
 export * from './task-reporter-client';
+export * from './artifact-client';
+export * from './artifact-request-response';
