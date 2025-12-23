@@ -1,3 +1,17 @@
+# [1.3.0](https://github.com/Nan0416/mini-cloud-models/compare/v1.2.0...v1.3.0) (2025-12-23)
+
+
+### Bug Fixes
+
+* **ci:** fix ci ([#7](https://github.com/Nan0416/mini-cloud-models/issues/7)) ([dad5bca](https://github.com/Nan0416/mini-cloud-models/commit/dad5bca3d81069f2eba6d8fa925e1d73c457c7d8))
+* **ci:** semantic-release v25 requires node version ^22.14.0 || >= 24… ([#8](https://github.com/Nan0416/mini-cloud-models/issues/8)) ([5ca49bf](https://github.com/Nan0416/mini-cloud-models/commit/5ca49bf81fa446d01fc0b231c5ef601a2343d2c4))
+* **ci:** use npm trusted publishing ([#6](https://github.com/Nan0416/mini-cloud-models/issues/6)) ([1e6f1fe](https://github.com/Nan0416/mini-cloud-models/commit/1e6f1fefefb9ac7265a201dfe6b5e3cebaf53bd7))
+
+
+### Features
+
+* **artifacts:** add artifacts models ([#5](https://github.com/Nan0416/mini-cloud-models/issues/5)) ([50765b3](https://github.com/Nan0416/mini-cloud-models/commit/50765b3f9a4e8de2968a37b4161ad83850506b0d))
+
 # [1.2.0](https://github.com/Nan0416/mini-cloud-models/compare/v1.1.0...v1.2.0) (2025-10-31)
 
 
