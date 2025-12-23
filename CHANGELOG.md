@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/Nan0416/mini-cloud-models/compare/v1.3.0...v1.4.0) (2025-12-23)
+
+
+### Features
+
+* **artifact:** publish artifact clients ([#9](https://github.com/Nan0416/mini-cloud-models/issues/9)) ([d630653](https://github.com/Nan0416/mini-cloud-models/commit/d6306537d3c1b990054616bf97ea30e70cf8b5f4))
+
 # [1.3.0](https://github.com/Nan0416/mini-cloud-models/compare/v1.2.0...v1.3.0) (2025-12-23)
 
 
