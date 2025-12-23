@@ -50,4 +50,20 @@ export class NotImplementedError extends InternalServiceError {
 }
 nameToConstructor.set('NotImplementedError', NotImplementedError);
 
+export class ArtifactNotFoundError extends InternalServiceError {
+  constructor(message: string) {
+    super(message, 404);
+    this.name = 'ArtifactNotFoundError';
+  }
+}
+nameToConstructor.set('ArtifactNotFoundError', ArtifactNotFoundError);
+
+export class DuplicateArtifactError extends InternalServiceError {
+  constructor(message: string) {
+    super(message, 400);
+    this.name = 'DuplicateArtifactError';
+  }
+}
+nameToConstructor.set('DuplicateArtifactError', DuplicateArtifactError);
+
 export const ERROR_NAME_TO_CONSTRUCTOR: ReadonlyMap<string, ErrorConstructor> = nameToConstructor;

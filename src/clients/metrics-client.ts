@@ -1,6 +1,18 @@
 import { Dimension, MetricReferenceNotification, Partition } from '../models';
 import { LoadMetricsRequest, MetricWithDimensionsResponse, MetricWithDimenstionsRequest } from './metrics-request-response';
 
+export interface DeleteNamespaceRequest {
+  readonly namespace: string;
+}
+
+export interface DeleteNamespaceResponse {}
+
+export interface ListNamespaceRequest {}
+
+export interface ListNamespaceResponse {
+  readonly namespaces: ReadonlyArray<string>;
+}
+
 /**
  * metrics client loads metrics from storage.
  *
@@ -13,13 +25,13 @@ export interface MetricsClient {
    * process cache, the metrics watcher may not be aware of deleting the metric namespace.
    * @param namespace
    */
-  deleteNamespace(namespace: string): Promise<void>;
+  deleteNamespace(request: DeleteNamespaceRequest): Promise<DeleteNamespaceResponse>;
 
-  namespaces(): Promise<string[]>;
+  listNamespaces(request: ListNamespaceRequest): Promise<ListNamespaceResponse>;
 
-  metricNames(namespace: string): Promise<string[]>;
+  listMetricNames(namespace: string): Promise<string[]>;
 
-  dimensions(namespace: string, metricName: string): Promise<Dimension[]>;
+  listMetricDimensions(namespace: string, metricName: string): Promise<Dimension[]>;
 
   metricWithDimensions(request: MetricWithDimenstionsRequest): Promise<MetricWithDimensionsResponse>;
 
