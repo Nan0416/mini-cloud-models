@@ -36,6 +36,4 @@ jobs:
         env:
           # Required for bumping version and push the change to github repo.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Required for releasing the built artifact to npm.
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
